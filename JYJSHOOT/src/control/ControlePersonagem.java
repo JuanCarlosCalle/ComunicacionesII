@@ -10,14 +10,14 @@ import javax.swing.Timer;
 
 import Main.Main;
 import connection.Server;
-import model.Personagem;
+import model.Personaje;
 
 public class ControlePersonagem extends KeyAdapter implements ActionListener{
 
-	private Personagem personagem;
+	private Personaje personagem;
 	private Timer time;
 	
-	public ControlePersonagem(Personagem personagem) {
+	public ControlePersonagem(Personaje personagem) {
 		this.personagem = personagem;
 		time = new Timer(10, this);
 		time.start();

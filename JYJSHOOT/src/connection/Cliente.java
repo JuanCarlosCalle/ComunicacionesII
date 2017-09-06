@@ -7,8 +7,8 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import Main.Main;
-import model.Inimigo;
-import model.Personagem;
+import model.Enemigo;
+import model.Personaje;
 import view.TelaDaFase;
 
 public class Cliente extends Thread{
@@ -62,7 +62,7 @@ public class Cliente extends Thread{
 		public void run() {
 			while (true){
 				try {
-						Personagem personagemRecebido = (Personagem) objectInPS.readObject();
+						Personaje personagemRecebido = (Personaje) objectInPS.readObject();
 						if(personagemRecebido!=null){
 							Main.personagem = personagemRecebido;
 							System.out.println("---------------------------------------------------------------------");
@@ -81,7 +81,7 @@ public class Cliente extends Thread{
 	}
 
 	public static void enviarInimigo(){
-		Inimigo inimigoEnviar = Main.inimigo;
+		Enemigo inimigoEnviar = Main.inimigo;
 		System.out.println("---------------------------------------------------------------------");
 		System.out.println("ENEMIGO ENVIAR");
 		System.out.println("X :"+inimigoEnviar.getX());

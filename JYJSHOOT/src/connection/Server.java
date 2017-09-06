@@ -9,8 +9,8 @@ import java.net.Socket;
 import javax.swing.JOptionPane;
 
 import Main.Main;
-import model.Inimigo;
-import model.Personagem;
+import model.Enemigo;
+import model.Personaje;
 import view.TelaDaFase;
 
 public class Server extends Thread{
@@ -85,7 +85,7 @@ public class Server extends Thread{
 			while(true){
 				try {
 					if(socket.isConnected()){
-						Inimigo inimigoRecebido = (Inimigo) objectInPS.readObject();
+						Enemigo inimigoRecebido = (Enemigo) objectInPS.readObject();
 						if(inimigoRecebido!=null){
 							Main.inimigo = inimigoRecebido;
 							System.out.println("---------------------------------------------------------------------");
@@ -110,7 +110,7 @@ public class Server extends Thread{
 
 	public static void  enviarPersonagem(){
 
-		Personagem personagemEnviar = Main.personagem;
+		Personaje personagemEnviar = Main.personagem;
 		System.out.println("---------------------------------------------------------------------");
 		System.out.println("PERSONALIZACIÓN ENVIAR");
 		System.out.println("X :"+personagemEnviar.getX());

@@ -10,14 +10,14 @@ import javax.swing.Timer;
 
 import Main.Main;
 import connection.Cliente;
-import model.Inimigo;
+import model.Enemigo;
 
 public class ControleInimigo extends KeyAdapter implements ActionListener{
 
-	private Inimigo inimigo;
+	private Enemigo inimigo;
 	private Timer time;
 	
-	public ControleInimigo(Inimigo inimigo) {
+	public ControleInimigo(Enemigo inimigo) {
 		this.inimigo = inimigo;
 		time = new Timer(10, this);
 		time.start();

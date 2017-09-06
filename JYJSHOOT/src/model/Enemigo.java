@@ -5,31 +5,30 @@ import java.awt.Rectangle;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Personagem implements Serializable{
+public class Enemigo implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1605196378640192870L;
+	private static final long serialVersionUID = -7508901287376056130L;
 	
 	int x;
 	int y;
 
 	int hp = 100;
 
-	ArrayList<Point> tirosUsuario;
+	ArrayList<Point> tirosInimigo;
 
 	Rectangle area;
 
 
-	public Personagem(int x) {
+	public Enemigo(int x) {
 		this.x = x;
 		y = 5;
 		area = new Rectangle(x, y, 40, 40);
 
-		tirosUsuario = new ArrayList<Point>();
+		tirosInimigo = new ArrayList<Point>();
 	}
-
 
 	public void dano(){
 		hp -= 10;
@@ -68,14 +67,16 @@ public class Personagem implements Serializable{
 	}
 
 
-	public ArrayList<Point> getTirosUsuario() {
-		return tirosUsuario;
+	public ArrayList<Point> getTirosInimigo() {
+		return tirosInimigo;
 	}
-
 
 	public int getHp() {
 		return hp;
 	}
-	
-	public void pegarDados(){}
+	public void setHp (int hp){
+		this.hp = hp;
+	}
+
+
 }
